@@ -28,7 +28,6 @@ const Backdrop = styled('div')`
 
 const style = {
   width: 400,
-  bgcolor: 'background.paper',
   border: '2px solid #000',
   p: 2,
   px: 4,
@@ -56,17 +55,17 @@ export default function ModalUnstyledDemo({patients}) {
         <Box sx={style}>
 
         <h2 id="unstyled-modal-title">{}</h2>
-          <p id="unstyled-modal-description">
-            Imagem
-            Nome completo
-            Email
-            Gênero
-            Data de nascimento
-            Telefone
-            Nacionalidade
-            Endereço
-            ID (Número de identificação)
-            URL para compartilhamento</p>
+          <p id="unstyled-modal-description"></p>
+           <p>Imagem</p>
+           <p>Nome completo</p>
+           <p>Email</p>
+           <p>Gênero</p>
+           <p>Data de nascimento</p>
+           <p>Telefone</p>
+           <p>Nacionalidade</p>
+           <p>Endereço</p>
+           <p>ID (Número de identificação)</p>
+           <p>URL para compartilhamento</p>
         </Box>
       </StyledModal>
     </div>
