@@ -12,7 +12,6 @@ const StyledModal = styled(ModalUnstyled)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
 `;
 
 const Backdrop = styled('div')`
@@ -23,12 +22,11 @@ const Backdrop = styled('div')`
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  bgcolor: 'background.paper',
   -webkit-tap-highlight-color: transparent;
 `;
 const style = {
   width: 400,
-  bgcolor: 'background.paper',
+  bgcolor: 'white',
   border: '2px solid #000',
   p: 2,
   px: 4,
@@ -50,16 +48,15 @@ export default function Modal({open, handleClose, currentPatient}) {
 
         <h2 id="unstyled-modal-title">{}</h2>
           <p id="unstyled-modal-description"></p>
-           <img src={currentPatient?.picture?.thumbnail} alt={currentPatient?.name?.first}  />
+           <img src={currentPatient?.picture?.medium} alt={currentPatient?.name?.first}  />
            <p>Nome completo: {`${currentPatient?.name?.first} ${currentPatient?.name?.last}`}</p>
            <p>Email: {currentPatient?.email}</p>
            <p>Gênero: {currentPatient?.gender}</p>
-           <p>Data de nascimento{currentPatient?.dob.date}</p>
+           <p>Data de nascimento{currentPatient?.dob?.date}</p>
            <p>Telefone: {currentPatient?.phone}</p>
            <p>Nacionalidade: {currentPatient?.nat}</p>
            <p>Endereço: {`${currentPatient?.location?.street?.name} ${currentPatient?.location?.street?.number}, ${currentPatient?.location?.city} - ${currentPatient?.location?.state}`}</p>
-           <p>ID (Número de identificação): {currentPatient.id.value}</p>
-           <p>URL para compartilhamento</p>
+           <p>ID (Número de identificação): {currentPatient?.id?.value}</p>
         </Box>
       </StyledModal>
     </div>

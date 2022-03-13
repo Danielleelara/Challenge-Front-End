@@ -4,7 +4,7 @@ import api from '../api';
 import Modal from "../Components/Modal";
 
 
-function Patients (){
+function Patients ({currentPatient, open, handleClose }){
     const { id } = useParams()
     const[patient, setPatient] = useState([]);
     
@@ -20,7 +20,11 @@ function Patients (){
 
     return(
       <Modal
-        patient={patient}
+        currentPatient={currentPatient}
+        aria-labelledby="unstyled-modal-title"
+        aria-describedby="unstyled-modal-description"
+        open={open}
+        onClose={handleClose}
       
       />
     )
