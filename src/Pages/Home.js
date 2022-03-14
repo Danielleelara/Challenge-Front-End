@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Modal from '../Components/Modal';
 import api from '../api';
+import Filter from '../Components/Filter'
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <>
+    <Filter patients={patients}/>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 250 }} size="small" aria-label="a dense table">
           <TableHead>
