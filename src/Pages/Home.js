@@ -17,6 +17,7 @@ export default function Home() {
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
   const [currentPatient, setCurrentPatient]= useState({});
+  const [patientsFiltered, setPatientsFiltered]= useState([]);
 
 
   useEffect(() => {
@@ -24,13 +25,26 @@ export default function Home() {
       const response = await api.get("?results=50");
       console.log(response.data.results)
       setPatients(response.data.results);
+      setPatientsFiltered(response.data.results)
     }
     getPatients();
   }, []);
 
+  function handlePatientFiltered(event){
+    const patientCurrent = event.target.value;
+    if (patientCurrent === "limpar"){
+      return setPatientsFiltered(patients)
+    }
+      const patientsFiltered = patients.filter((patient) => {
+      return patientCurrent.cell === patient.cell 
+    })
+    
+    setPatientsFiltered(patientsFiltered)
+  }
+
   return (
     <>
-    <Filter patients={patients}/>
+    <Filter onFilterChange={handlePatientFiltered} patients={patients}/>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 250 }} size="small" aria-label="a dense table">
           <TableHead>
@@ -42,9 +56,10 @@ export default function Home() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {patients.map((patient) => (
+
+            {patientsFiltered.map((patient) => (
               <TableRow
-                key={patient.id.value}
+                key={patient.dob.date}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell align="center">{patient.name.first} {patient.name.last}</TableCell>

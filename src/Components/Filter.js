@@ -1,7 +1,7 @@
 import styles from './Filter.module.css'
 import { MenuItem, TextField } from '@mui/material';
 
-function Filter({patients}) {
+function Filter({patients, onFilterChange}) {
   
   return (
     <div className={styles.container}> 
@@ -9,8 +9,9 @@ function Filter({patients}) {
         select
         label="Escolha seu paciente"
         className={styles.campoFiltro}
+        onChange={onFilterChange}
       >
-        <MenuItem value="">
+        <MenuItem value='limpar'>
           <em>Limpar</em>
         </MenuItem>
         {patients.map(patient => <MenuItem key={patient.id.value} value={patient}>{patient.name.first} {patient.name.last}</MenuItem>)}
