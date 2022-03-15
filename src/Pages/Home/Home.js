@@ -7,9 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
-import Modal from '../Components/Modal';
-import api from '../api';
-import Filter from '../Components/Filter'
+import Modal from '../../Components/Modal';
+import api from '../../api';
+import Filter from '../../Components/Filter/Filter'
+import styles from './Home.module.css'
 
 
 export default function Home() {
@@ -46,8 +47,8 @@ export default function Home() {
   return (
     <>
     <Filter onFilterChange={handlePatientFiltered} patients={patients}/>
-      <TableContainer component={Paper} >
-        <Table sx={{ minWidth: 250 }} size="small" aria-label="a dense table">
+      <TableContainer component={Paper} size="large">
+        <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
               <TableCell align="center">Nome</TableCell>
@@ -66,7 +67,7 @@ export default function Home() {
                 <TableCell align="center">{patient.name.first} {patient.name.last}</TableCell>
                 <TableCell align="center">{patient.gender}</TableCell>
                 <TableCell align="center">{new Intl.DateTimeFormat().format(new Date(patient.dob.date))}</TableCell>
-                <TableCell align="center"><Button variant="contained" sx={{ bgcolor: 'text.disabled'}} onClick={()=>{
+                <TableCell align="center"><Button className={styles.button} variant="contained" onClick={()=>{
                   handleOpen()
                   setCurrentPatient(patient)
                 }}>Visualizar</Button></TableCell>
