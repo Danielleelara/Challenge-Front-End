@@ -9,13 +9,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Header() {
   return  (
-    <Box sx={{ flexGrow: 1}} >
-      <AppBar position="static" >
+    <Box sx={{ flexGrow: 1 }} >
+      <AppBar position="static" sx={{ bgcolor: 'text.secondary'}} >
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
-            color="secondary"
+            color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
           >
@@ -24,7 +24,7 @@ export default function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Lista de Usuários
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button ></Button>
         </Toolbar>
       </AppBar>
     </Box>
