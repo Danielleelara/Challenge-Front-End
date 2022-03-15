@@ -64,7 +64,7 @@ export default function Home() {
               >
                 <TableCell align="center">{patient.name.first} {patient.name.last}</TableCell>
                 <TableCell align="center">{patient.gender}</TableCell>
-                <TableCell align="center">{patient.dob.date}</TableCell>
+                <TableCell align="center">{new Intl.DateTimeFormat().format(new Date(patient.dob.date))}</TableCell>
                 <TableCell align="center"><button onClick={()=>{
                   handleOpen()
                   setCurrentPatient(patient)

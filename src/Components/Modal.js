@@ -52,7 +52,7 @@ export default function Modal({open, handleClose, currentPatient}) {
            <p>Nome completo: {`${currentPatient?.name?.first} ${currentPatient?.name?.last}`}</p>
            <p>Email: {currentPatient?.email}</p>
            <p>Gênero: {currentPatient?.gender}</p>
-           <p>Data de nascimento{currentPatient?.dob?.date}</p>
+           <p>Data de nascimento: {new Intl.DateTimeFormat().format(new Date(currentPatient?.dob?.date))}</p>
            <p>Telefone: {currentPatient?.phone}</p>
            <p>Nacionalidade: {currentPatient?.nat}</p>
            <p>Endereço: {`${currentPatient?.location?.street?.name} ${currentPatient?.location?.street?.number}, ${currentPatient?.location?.city} - ${currentPatient?.location?.state}`}</p>
