@@ -1,0 +1,19 @@
+.button-root {
+    color: #FFBB33 !important;
+    background-color: #222 !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+}
+
+.button-root:hover {
+    background-color: #FFBB33  !important;
+    color: #222 !important;
+}
+
+.cabecalho-root{
+    font-weight: bold!important;
+}
+
+
+
+

@@ -7,11 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
-import Modal from '../../Components/Modal';
+import Modal from '../../Components/Modal/Modal';
 import api from '../../api';
-import Filter from '../../Components/Filter/Filter'
-import styles from './Home.module.css'
-
+import Filter from '../../Components/Filter/Filter';
+import './Home.css';
 
 export default function Home() {
   const [patients, setPatients] = useState([]);
@@ -46,11 +45,14 @@ export default function Home() {
 
   return (
     <>
-    <Filter onFilterChange={handlePatientFiltered} patients={patients}/>
-      <TableContainer component={Paper} size="large">
+    <Filter 
+      onFilterChange={handlePatientFiltered} 
+      patients={patients}
+    />
+      <TableContainer className="wrapper" component={Paper} size="large">
         <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
           <TableHead>
-            <TableRow>
+            <TableRow classes={{root:"cabecalho-root"}} >
               <TableCell align="center">Nome</TableCell>
               <TableCell align="center">Gênero</TableCell>
               <TableCell align="center">Aniversário</TableCell>
@@ -67,7 +69,7 @@ export default function Home() {
                 <TableCell align="center">{patient.name.first} {patient.name.last}</TableCell>
                 <TableCell align="center">{patient.gender}</TableCell>
                 <TableCell align="center">{new Intl.DateTimeFormat().format(new Date(patient.dob.date))}</TableCell>
-                <TableCell align="center"><Button className={styles.button} variant="contained" onClick={()=>{
+                <TableCell align="center"><Button classes={{root:"button-root"}} variant="contained"  onClick={()=>{
                   handleOpen()
                   setCurrentPatient(patient)
                 }}>Visualizar</Button></TableCell>
@@ -76,7 +78,11 @@ export default function Home() {
           </TableBody>
         </Table>
       </TableContainer>
-     <Modal open={open} handleClose={handleClose} currentPatient={currentPatient} />
+     <Modal 
+      open={open} 
+      handleClose={handleClose} 
+      currentPatient={currentPatient}
+     />
     </>
   );
 }

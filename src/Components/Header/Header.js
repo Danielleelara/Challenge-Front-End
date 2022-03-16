@@ -6,12 +6,14 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import styles from './Header.module.css';
+import './Header.css';
 
 export default function Header() {
   return  (
     <Box sx={{ flexGrow: 0 }} >
-      <AppBar className={styles.header}>
+      <AppBar
+        classes={{root:"header-root"}} 
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -23,7 +25,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Lista de Usuários
+            Pacientes
           </Typography>
           <Button ></Button>
         </Toolbar>
