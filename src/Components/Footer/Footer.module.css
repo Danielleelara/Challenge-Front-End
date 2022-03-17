@@ -2,7 +2,7 @@
     background-color: #222;
     color: #FFF;
     padding: 5px;
-    height: 90px;
+    height: 60px;
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -12,7 +12,7 @@
 .copy_right {
     position: fixed;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
     
 }
 .copy_right span {

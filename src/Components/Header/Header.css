@@ -1,6 +1,7 @@
 .header-root {  
     background-color:#222 !important;
     color: #FFBB33 !important;
-    padding: 10px !important ;
+    padding: 8px !important ;
     text-align: left !important;
+    height: 80px;
 }
