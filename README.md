@@ -13,7 +13,9 @@ Material UI (será instalado rodando o comando 5)
 
 O primeiro passo é clonar o projeto
 
-1. Acesse o link do projeto e faça o clone do repositório.(todo)
+1. Acesse o link do projeto e faça o clone do repositório.
+
+https://github.com/Danielleelara/Challenge-Front-End/tree/master
 
 2. Na pasta raiz do projeto, rodar o comando abaixo para instalar as dependências.
 
@@ -36,7 +38,7 @@ npm i axios
 npm start
 
 # Link da apresentação do projeto 
-?
 
-# C
+
+
 
