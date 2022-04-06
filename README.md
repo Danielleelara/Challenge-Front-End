@@ -2,7 +2,7 @@
 
 Este projeto foi criado com o intuito de facilitar a gestão de uma base de clientes e visualização das informações de seus pacientes. O projeto foi desenvolvido em ReactJs a partir da criação de uma SPA, usando react-routes para a implementação das rotas, o axios para a busca dos dados na Api e o Framework CSS Material UI.
 
-Segue o link do deploy: https://challenge-front-end-alpha.vercel.app/
+Link para visualizar no browser: https://challenge-front-end-alpha.vercel.app/
 
 ![image](https://user-images.githubusercontent.com/78480991/161863723-911d7371-c4b7-46a3-81d1-a2ea1717b41b.png)
 
