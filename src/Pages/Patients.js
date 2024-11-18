@@ -10,7 +10,7 @@ function Patients ({currentPatient, open, handleClose }){
     
     useEffect(() => {
         async function getPatient() {
-          const response = await api.get(`${id}`);
+          const response = await api.get(id);
           setPatient(response.data.results);
           
         }
@@ -20,7 +20,7 @@ function Patients ({currentPatient, open, handleClose }){
 
     return(
       <Modal
-        currentPatient={currentPatient}
+        currentPatient={patient}
         aria-labelledby="unstyled-modal-title"
         aria-describedby="unstyled-modal-description"
         open={open}

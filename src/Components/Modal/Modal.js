@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import styled from "styled-components";
-import ModalUnstyled from "@mui/base/ModalUnstyled";
+import { ModalUnstyled } from "@material-ui/core";
 import Avatar from "@mui/material/Avatar";
 
 

@@ -61,9 +61,9 @@ export default function Home() {
           </TableHead>
           <TableBody>
 
-            {patientsFiltered.map((patient) => (
+            {patientsFiltered.map((patient, index) => (
               <TableRow
-                key={patient.dob.date}
+                key={index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell align="center">{patient.name.first} {patient.name.last}</TableCell>

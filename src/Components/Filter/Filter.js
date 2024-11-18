@@ -14,7 +14,7 @@ function Filter({patients, onFilterChange}) {
         <MenuItem value='limpar'>
           <em>Limpar</em>
         </MenuItem>
-        {patients.map(patient => <MenuItem key={patient.id.value} value={patient}>{patient.name.first} {patient.name.last}</MenuItem>)}
+        {patients.map((patient, index) => <MenuItem key={patient.id.value + index} value={patient}>{patient.name.first} {patient.name.last}</MenuItem>)}
       </TextField>
       
       {/* <TextField
