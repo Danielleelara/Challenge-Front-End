@@ -10,7 +10,8 @@ function Patients ({currentPatient, open, handleClose }){
     
     useEffect(() => {
         async function getPatient() {
-          const response = await api.get(id);
+          const response = await api.get(id, {referrerPolicy: "unsafe-url"});
+
           setPatient(response.data.results);
           
         }

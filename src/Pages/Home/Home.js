@@ -23,8 +23,7 @@ export default function Home() {
 
   useEffect(() => {
     async function getPatients() {
-      const response = await api.get("?results=50");
-      console.log(response.data.results)
+      const response = await api.get("?results=50", {referrerPolicy: "unsafe-url"});
       setPatients(response.data.results);
       setPatientsFiltered(response.data.results)
     }
