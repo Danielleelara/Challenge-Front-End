@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React,{ useState, useEffect } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -48,7 +48,7 @@ export default function Home() {
       onFilterChange={handlePatientFiltered} 
       patients={patients}
     />
-      <TableContainer className="wrapper" component={Paper} size="large">
+      <TableContainer className="wrapper" component={Paper}>
         <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow classes={{root:"cabecalho-root"}} >

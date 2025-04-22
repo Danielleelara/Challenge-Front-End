@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Filter.module.css'
 import { MenuItem, TextField } from '@mui/material';
 

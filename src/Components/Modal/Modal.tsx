@@ -1,3 +1,4 @@
+import React from "react";
 import { Box } from "@mui/system";
 import styled from "styled-components";
 import { ModalUnstyled } from "@material-ui/core";
@@ -50,7 +51,108 @@ const style = {
   pb: 3
 };
 
-export default function Modal({ open, handleClose, currentPatient }) {
+type Patient = {
+    gender: string,
+    name: {
+        title:  string,
+        first:  string,
+        last:  string,
+    },
+    location: {
+        street: {
+            number: number,
+            name:  string,
+        },
+        city: string,
+        state:  string,
+        country: string,
+        postcode:  number,
+        coordinates: {
+            latitude:  string,
+            longitude:  string,
+        },
+        timezone: {
+            offset:  string,
+            description:  string,
+        }
+    },
+    email:  string,
+    login: {
+        uuid: string,
+        username:  string,
+        password:  string,
+        salt:  string,
+        md5:  string,
+        sha1:  string,
+        sha256: string,
+    },
+    dob: {
+        date:  string,
+        age:  number,
+    },
+    registered: {
+        date: string,
+        age:  number,
+    },
+    phone:  number,
+    cell: number,
+    id: {
+        name: string,
+        value:  number,
+    },
+    picture: {
+        large:  string,
+        medium:  string,
+        thumbnail:  string,
+    },
+    nat: string,
+}
+//   name: {
+//     title: string;
+//     first: string;
+//     last: string;
+//   };
+//   phone: string;
+//   email: string;
+//   gender: string;
+//   id: {
+//     name: string;
+//     value: string;
+//   },
+//   location: {
+//     street: {
+//       number: number;
+//       name: string;
+//     };
+//     city: string;
+//     coordinates: {
+//       latitude: string;
+//       longitude: string;
+//     },
+//     country: string;
+//     postcode: number
+//     state: string,
+//   },
+//   timezone: {
+//     description: string;
+//     offset: string;
+//   },
+//   picture : {
+//     large: string;
+//     medium: string;
+//     thumbnail: string;
+//   }
+
+// }
+
+type Props = {
+  open: boolean; 
+  handleClose: ()=> void; 
+  currentPatient: Patient;
+}
+
+
+export default function Modal({ open, currentPatient, handleClose }: Props) {
   return (
     <StyledModal
       aria-labelledby="unstyled-modal-title"

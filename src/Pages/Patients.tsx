@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import api from '../api';
-import Modal from "../Components/Modal";
+import Modal from "../Components/Modal/Modal";
+
+type Props = {
+  open: any; 
+  handleClose: any; 
+  currentPatient: any;
+}
 
 
-function Patients ({currentPatient, open, handleClose }){
+function Patients ({currentPatient, open, handleClose }: Props){
     const { id } = useParams()
     const[patient, setPatient] = useState([]);
     
@@ -26,7 +32,6 @@ function Patients ({currentPatient, open, handleClose }){
         aria-describedby="unstyled-modal-description"
         open={open}
         onClose={handleClose}
-      
       />
     )
 }
