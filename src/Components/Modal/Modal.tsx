@@ -1,11 +1,11 @@
 import React from "react";
 import { Box } from "@mui/system";
 import styled from "styled-components";
-import { ModalUnstyled } from "@material-ui/core";
+import { Modal as ModalMUI } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 
 
-const StyledModal = styled(ModalUnstyled)`
+const StyledModal = styled(ModalMUI)`
   position: fixed;
   z-index: 1300;
   right: 0;
