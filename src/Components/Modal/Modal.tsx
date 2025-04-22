@@ -51,7 +51,7 @@ const style = {
   pb: 3
 };
 
-type Patient = {
+export type Patient = {
     gender: string,
     name: {
         title:  string,
@@ -107,43 +107,6 @@ type Patient = {
     },
     nat: string,
 }
-//   name: {
-//     title: string;
-//     first: string;
-//     last: string;
-//   };
-//   phone: string;
-//   email: string;
-//   gender: string;
-//   id: {
-//     name: string;
-//     value: string;
-//   },
-//   location: {
-//     street: {
-//       number: number;
-//       name: string;
-//     };
-//     city: string;
-//     coordinates: {
-//       latitude: string;
-//       longitude: string;
-//     },
-//     country: string;
-//     postcode: number
-//     state: string,
-//   },
-//   timezone: {
-//     description: string;
-//     offset: string;
-//   },
-//   picture : {
-//     large: string;
-//     medium: string;
-//     thumbnail: string;
-//   }
-
-// }
 
 type Props = {
   open: boolean; 

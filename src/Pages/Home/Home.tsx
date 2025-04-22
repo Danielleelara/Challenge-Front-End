@@ -11,6 +11,10 @@ import Modal from '../../Components/Modal/Modal';
 import api from '../../api';
 import Filter from '../../Components/Filter/Filter';
 import './Home.css';
+import { Patient } from '../../Components/Modal/Modal';
+
+
+
 
 export default function Home() {
   const [patients, setPatients] = useState([]);
