@@ -13,7 +13,7 @@ Link para visualizar no browser: https://challenge-front-end-alpha.vercel.app/
 
 # Requisitos de ambiente e dependências
 
-Node v17.4.0 (npm v8.3.1)
+Node v18
 
 # Configurando o ambiente
 
