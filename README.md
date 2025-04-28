@@ -1,6 +1,6 @@
 # Lista de Pacientes
 
-Este projeto foi criado com o intuito de facilitar a gestão de uma base de clientes e visualização das informações de seus pacientes. O projeto foi desenvolvido em ReactJs a partir da criação de uma SPA, usando react-routes para a implementação das rotas, o axios para a busca dos dados na Api e o Framework CSS Material UI.
+Este projeto foi criado com o intuito de facilitar a gestão de uma base de clientes e visualização das informações de seus pacientes. O projeto foi desenvolvido em ReactJs usando o Vite, react-routes para a implementação das rotas, o axios para a busca dos dados na Api e o Framework CSS Material UI.
 
 Link para visualizar no browser: https://challenge-front-end-alpha.vercel.app/
 
