@@ -44,8 +44,9 @@ const style = {
   height: 300,
   color: "#FFBB33",
   textAlign: "center",
+  margin: 16,
   bgcolor: "#222",
-  borderRadius: "10%",
+  borderRadius: "8px",
   p: 2,
   px: 4,
   pb: 3
@@ -95,7 +96,7 @@ export type Patient = {
         age:  number,
     },
     phone:  number,
-    cell: number,
+    cell: string,
     id: {
         name: string,
         value:  number,

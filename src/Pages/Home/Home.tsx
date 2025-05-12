@@ -12,35 +12,43 @@ import api from '../../api';
 import Filter from '../../Components/Filter/Filter';
 import './Home.css';
 import { Patient } from '../../Components/Modal/Modal';
-
-
+import { Container, SelectChangeEvent } from '@mui/material';
 
 
 export default function Home() {
-  const [patients, setPatients] = useState([]);
+  const [patients, setPatients] = useState<Patient[]>([]);
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
-  const [currentPatient, setCurrentPatient]= useState({});
-  const [patientsFiltered, setPatientsFiltered]= useState([]);
+  const [currentPatient, setCurrentPatient]= useState<Patient>({});
+  const [patientsFiltered, setPatientsFiltered]= useState<Patient[]>([]);
+  const [filtered, setFiltered]= useState<Patient>();
+  const [loading, setLoading]= useState(false);
 
 
   useEffect(() => {
     async function getPatients() {
-      const response = await api.get("?results=50", {referrerPolicy: "unsafe-url"});
-      setPatients(response.data.results);
-      setPatientsFiltered(response.data.results)
+      try {
+        setLoading(true)
+        const response = await api.get("?results=50", {referrerPolicy: "unsafe-url"});
+        setPatients(response.data.results);
+        setPatientsFiltered(response.data.results)
+      } catch (error) {
+        console.log(error)
+      } finally {
+        setLoading(false)
+      }
     }
     getPatients();
   }, []);
 
-  function handlePatientFiltered(event){
-    const patientCurrent = event.target.value;
+  function handlePatientFiltered(event: SelectChangeEvent){
+    const patientCurrent = event.target.value ;
     if (patientCurrent === "limpar"){
       return setPatientsFiltered(patients)
     }
       const patientsFiltered = patients.filter((patient) => {
-      return patientCurrent.cell === patient.cell 
+        return patientCurrent === patient.id.value 
     })
     
     setPatientsFiltered(patientsFiltered)
@@ -48,14 +56,17 @@ export default function Home() {
 
   return (
     <>
+    {loading ? <h1 color='red'>Loading</h1> :
+    <Container >
     <Filter 
       onFilterChange={handlePatientFiltered} 
       patients={patients}
+      selectedPatient={patientsFiltered} 
     />
       <TableContainer className="wrapper" component={Paper}>
         <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
           <TableHead>
-            <TableRow classes={{root:"cabecalho-root"}} >
+            <TableRow className='cabecalho-root' >
               <TableCell align="center">Nome</TableCell>
               <TableCell align="center">Gênero</TableCell>
               <TableCell align="center">Aniversário</TableCell>
@@ -86,6 +97,8 @@ export default function Home() {
       handleClose={handleClose} 
       currentPatient={currentPatient}
      />
+     </Container>
+}
     </>
   );
 }
